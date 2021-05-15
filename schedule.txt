@@ -1,0 +1,17 @@
+Week 4:
+1. Prepare the first ten datasets: AGP, AMS, ARN, ATH, BCN, BRU, CDG, CPH, DUB, DUS
+	1) Apply for a Sentinel Hub dashboard account.
+	2) According to the content of the corresponding download.py file on github, download the Sentinel-2 satellite images belonging to the ten airports in the specified five years (from 2015-01-01 to 2020-07-31).
+2. Study the load_data() and update_data() functions in train.py of the github.  Learn how to use the annotation the authors provided to label the satellite images of the first five airports from January to July in 2020.
+3. Learn how to use Google platform.
+
+
+Week 5:
+Label the pictures of the first 5 airports, build the FCN network, and train the model.
+	1) Explore the preprocessing methods of data in github: crop, compressed pictures, etc. 
+	2) Build the FCN network architecture based on the FCN network provided in the paper.
+	3) Design the FCN network evaluation matrix.
+	4) Conduct first model training.
+	5) Design improvement function to update the labelled data using the model.
+
+
