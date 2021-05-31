@@ -6,7 +6,7 @@ Another interesting aspect of the project is the use of a relatively small amoun
 
 ## Sampling strategy
 
-The sampling strategy for training will be explained here. The sampling strategy is the exact same as the one used by the authors. An important step of this strategy will be highlighted below, after which we will describe what it does.
+The sampling strategy for training will be explained here. The sampling strategy is the exact same as the one used by and taken from the authors. An important step of this strategy will be highlighted below, after which we will describe what it does.
 
 ```python
 # crop samples from input image
