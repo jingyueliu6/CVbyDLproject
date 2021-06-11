@@ -91,26 +91,26 @@ Here we will also provide some examples of positive samples and nagetive samples
 positive examples:
 
 <p align="center">
-<img src="figures/positive1.png" alt="positive example" width="500"/>
+<img src="figures/positive1.png" alt="positive example" width="200"/>
 </p>
 
 <p align="center">
-<img src="figures/positive2.png" alt="positive example" width="500"/>
+<img src="figures/positive2.png" alt="positive example" width="200"/>
 </p>
 
 <p align="center">
-<img src="figures/positive3.png" alt="positive example" width="500"/>
+<img src="figures/positive3.png" alt="positive example" width="200"/>
 </p>
 negative examples:
 
 <p align="center">
-<img src="figures/negative1.png" alt="negative example" width="500"/>
+<img src="figures/negative1.png" alt="negative example" width="200"/>
 </p>
 
 <p align="center">
-<img src="figures/negative2.png" alt="negative example" width="500"/>
+<img src="figures/negative2.png" alt="negative example" width="200"/>
 </p>
 
 <p align="center">
-<img src="figures/negative3.png" alt="negative example" width="500"/>
+<img src="figures/negative3.png" alt="negative example" width="200"/>
 </p>
