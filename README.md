@@ -114,3 +114,53 @@ negative examples:
 <p align="center">
 <img src="figures/negative3.png" alt="negative example" width="200"/>
 </p>
+
+## Training 
+What the author described in the paper is that they use an FCN network to train the model. But according to the content of the paper, we found that the author did not use the exact FCN. They just used the CNN feature extraction part of FCN to reduce the dimensionality of the patch of image to one dimension, and then classified the patch into two categories, whether it is positive or nagetive. Thus, compared with the traditional CNN network, this network does not have the fully connected layer behind, and does not have upsample part compared with FCN network.
+
+```python
+class CONV_RELU_BN_POOL(nn.Module):
+	def __init__(self, in_channels, out_channels, kernel_size=(5, 5), stride=(1, 1), pool_size=(5, 5), pool_stride=(1, 1)):
+		super(CONV_RELU_BN_POOL, self).__init__()
+		self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size, stride=stride, bias=False)
+		self.relu = nn.ReLU()
+		self.bn = nn.BatchNorm2d(out_channels)
+		self.pool = nn.MaxPool2d(kernel_size=pool_size, stride=pool_stride)
+
+	def forward(self, x):
+		x = self.conv(x)
+		x = self.relu(x)
+		x = self.bn(x)
+		x = self.pool(x)
+		return x
+
+class FCN(nn.Module):
+	def __init__(self):
+		super(FCN, self).__init__()
+		self.conv1 = CONV_RELU_BN_POOL(in_channels=3, out_channels=16)
+		self.conv2 = CONV_RELU_BN_POOL(in_channels=16, out_channels=32)
+		self.conv3 = CONV_RELU_BN_POOL(in_channels=32, out_channels=64)
+		self.conv4 = CONV_RELU_BN_POOL(in_channels=64, out_channels=64)
+		self.conv5 = CONV_RELU_BN_POOL(in_channels=64, out_channels=64)
+		self.conv6 = nn.Conv2d(64, 1, kernel_size=(11, 11), stride=(1, 1))
+		self.sigmoid = nn.Sigmoid()
+
+	def forward(self, x):
+		x = self.conv1(x)
+		x = self.conv2(x)
+		x = self.conv3(x)
+		x = self.conv4(x)
+		x = self.conv5(x)
+		x = self.conv6(x)
+		x = self.sigmoid(x)
+		return x
+```
+
+In the training model part, considering that the data set is extremely large, we cannot use all the annotation files provided by the author to train all the pictures of 15 airports in 2020. So we only used 220 images from the two airports, DUB and FRA, in 2020 for training. The training epoch is 20 times.
+
+The training codes is in the file train.py. And the training loss and accuracy can be seen as follow:
+
+<p align="center">
+<img src="figures/accuracy_loss.png" alt="training result" width="700"/>
+</p>
+
