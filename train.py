@@ -104,12 +104,12 @@ y1 = accuracy_list
 y2 = loss_list
 plt.subplot(2, 1, 1)
 plt.plot(x1, y1,'o-')
-plt.title('Test accuracy vs. epoches')
-plt.ylabel('Test accuracy')
+plt.title('Train accuracy vs. epoches')
+plt.ylabel('Train accuracy')
 plt.subplot(2, 1, 2)
 plt.plot(x2, y2, '.-')
-plt.xlabel('Test loss vs. epoches')
-plt.ylabel('Test loss')
+plt.xlabel('Train loss vs. epoches')
+plt.ylabel('Train loss')
 plt.savefig("accuracy_loss.png")
 plt.show()
 
