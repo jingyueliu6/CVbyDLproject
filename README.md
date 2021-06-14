@@ -164,3 +164,8 @@ The training codes is in the file train.py. And the training loss and accuracy c
 <img src="figures/accuracy_loss.png" alt="training result" width="700"/>
 </p>
 
+## Testing
+
+In this section, we will describe the test results of the earlier described model on unseen data. As we trained the model on data from airports DUB and FRA (year 2020), the other data is suitable for evaluating the performance. 
+
+TODO: To be replaced by reproduced graph:![9c997249-59b5-496d-9d89-011d36b3b03d](https://user-images.githubusercontent.com/36470382/121883238-c9e07280-cd11-11eb-83df-3b60dcafcd76.jpg)
