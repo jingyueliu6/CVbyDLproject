@@ -4,6 +4,10 @@ The goal of this reproduction project is to reproduce some results of the paper 
 
 Another interesting aspect of the project is the use of a relatively small amount of annotated images. The authors chose this approach as it makes the overall method suitable for a fast implementation for projects where large annotated datasets do not exist. Although there is a small amount of annotated data, the overall amount of data is huge. This is due to the large file sizes produced by the satellite imaging systems. For us it will be a challenge dealing with these large datasets, therefore we are considering using only a portion of the testing and validation data as the paper uses.
 
+### Goal
+
+The goal of the reproduction project is to recreate the model that can detect airplanes in the satellite aerial images. It will be interesting to see how the reproduced model will perform as it will be trained using less data. In order to evaluate the performance of our model compared to the original model, we will create a timeseries plot based on the detections performed by each model. The line plot will show the #airplanes counted per time interval (day or month). Making a plot using both model detections as input, will allow us to evaluate if our model detects more or less airplanes than the original model.
+
 ## Dataset
 The model is used to detect airplanes in satellite images. The paper used Sentinel-2 images of 30 airports from 2015 to 2020. The author used the images of 15 airports from January to July 2020 to train the model and test the model with a whole dataset.
 
@@ -266,7 +270,10 @@ for airport in airports:
 
 	json.dump(log, open(os.path.join(output_folder, airport+'.log'), 'w'))
 ```
-After creating timeseries from the log files, the following plot can be made:
+After creating timeseries from the log files, the following plot can be made, in which the green line represents our reproduced model result and the blue line stands for the author's model:
 
 ![AMS_airplanes_comparison](https://user-images.githubusercontent.com/36470382/122132601-681c2780-ce3b-11eb-9c4a-dead9e26da8f.png)
 
+## Conclusion
+
+As can be seen, the reproduced model brings a different result compared to the original model. It is difficult to assess which model performs actually better in terms of accuracy, as there is only a ground truth readily available for a small subset of the data. We expect the author's model to be more accurate as it has been trained on a larger amount of data. However, this certainly does not have to be true. This project is mostly aimed at gaining experience with applying computer vision by deep learning techniques. Reproducing parts of this paper has been a interesting challenge, especially challening due to the large amount of data the author's used to create their results.
