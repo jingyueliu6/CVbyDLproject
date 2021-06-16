@@ -270,9 +270,9 @@ for airport in airports:
 
 	json.dump(log, open(os.path.join(output_folder, airport+'.log'), 'w'))
 ```
-After creating timeseries from the log files, the following plot can be made, in which the green line represents our reproduced model result and the blue line stands for the author's model:
+After creating timeseries from the log files, the following plot can be made, in which the green line represents the author's model result, the blue line represents our reproduced model's result and the purple dashed line is created from the annotations and can be considered as ground truth.
+![monthly_airplanes_plot](https://user-images.githubusercontent.com/36470382/122274002-60638e00-cee2-11eb-9fcd-68e8906488f8.png)
 
-![AMS_airplanes_comparison](https://user-images.githubusercontent.com/36470382/122132601-681c2780-ce3b-11eb-9c4a-dead9e26da8f.png)
 
 ## Conclusion
 
