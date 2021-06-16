@@ -271,9 +271,12 @@ for airport in airports:
 	json.dump(log, open(os.path.join(output_folder, airport+'.log'), 'w'))
 ```
 After creating timeseries from the log files, the following plot can be made, in which the green line represents the author's model result, the blue line represents our reproduced model's result and the purple dashed line is created from the annotations and can be considered as ground truth.
-![monthly_airplanes_plot](https://user-images.githubusercontent.com/36470382/122274002-60638e00-cee2-11eb-9fcd-68e8906488f8.png)
+![monthly_airplanes_plot](https://user-images.githubusercontent.com/36470382/122275305-d5839300-cee3-11eb-8c2e-071756d69bf1.png)
+
 
 
 ## Conclusion
 
-As can be seen, the reproduced model brings a different result compared to the original model. It is difficult to assess which model performs actually better in terms of accuracy, as there is only a ground truth readily available for a small subset of the data. We expect the author's model to be more accurate as it has been trained on a larger amount of data. However, this certainly does not have to be true. This project is mostly aimed at gaining experience with applying computer vision by deep learning techniques. Reproducing parts of this paper has been a interesting challenge, especially challening due to the large amount of data the author's used to create their results.
+As can be seen, the reproduced model brings a different result compared to the original model. It is difficult to assess which model performs actually better in terms of accuracy, as there is only a ground truth readily available for a small subset of the data. 
+
+For this particular dataset, the reproduced model seems to produce a more accurate result. However, more testing should be performed to actually confirm this. In general, we expect the author's model to be more accurate as it has been trained on a larger amount of data. However, this certainly does not have to be true. This project is mostly aimed at gaining experience with applying computer vision by deep learning techniques. Reproducing parts of this paper has been a interesting challenge, especially challening due to the large amount of data the author's used to create their results.
